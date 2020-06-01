@@ -16,6 +16,7 @@ int runShutdownCommand()
 	return system("shutdown -s -t 0");
 #else // osx / linux
 	return system("sudo omxplayer -b /home/pi/scripts/Apagando.mp4");
+	return system("sleep 10");
 	return system("sudo shutdown -h now");
 #endif
 }
@@ -26,6 +27,7 @@ int runRestartCommand()
 	return system("shutdown -r -t 0");
 #else // osx / linux
 	return system("sudo omxplayer -b /home/pi/scripts/Reiniciando.mp4");
+	return system("sleep 10");
 	return system("sudo shutdown -r now");
 #endif
 }
