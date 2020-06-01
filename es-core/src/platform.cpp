@@ -15,7 +15,8 @@ int runShutdownCommand()
 #ifdef WIN32 // windows
 	return system("shutdown -s -t 0");
 #else // osx / linux
-	return system("sudo omxplayer -b /home/pi/scripts/Apagando.mp4 && sudo shutdown -h now");
+	return system("sudo omxplayer -b /home/pi/scripts/Apagando.mp4");
+	return system("sudo shutdown -h now");
 #endif
 }
 
@@ -24,7 +25,8 @@ int runRestartCommand()
 #ifdef WIN32 // windows
 	return system("shutdown -r -t 0");
 #else // osx / linux
-	return system("sudo omxplayer -b /home/pi/scripts/Reiniciando.mp4 && sudo shutdown -r now");
+	return system("sudo omxplayer -b /home/pi/scripts/Reiniciando.mp4");
+	return system("sudo shutdown -r now");
 #endif
 }
 
