@@ -15,10 +15,7 @@ int runShutdownCommand()
 #ifdef WIN32 // windows
 	return system("shutdown -s -t 0");
 #else // osx / linux
-	int pid = system("sudo omxplayer -b /home/pi/scripts/Apagando.mp4");
-	sleep(15);
-	pid = system("sudo shutdown -h now");
-	return pid;
+	return system("sudo /home/pi/scripts/apagando.sh");
 #endif
 }
 
@@ -27,10 +24,7 @@ int runRestartCommand()
 #ifdef WIN32 // windows
 	return system("shutdown -r -t 0");
 #else // osx / linux
-	int pid = system("sudo omxplayer -b /home/pi/scripts/Reiniciando.mp4");
-	sleep(15);
-	pid = system("sudo shutdown -r now");
-	return pid;
+	return system("sudo /home/pi/scripts/reiniciando.sh");
 #endif
 }
 
